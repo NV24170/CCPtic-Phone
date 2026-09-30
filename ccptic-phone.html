@@ -4,8 +4,8 @@
 <style>
 :root{--bg:#150f26;--p1:#2a2050;--p2:#231a44;--ac:#8b5cf6;--ac2:#a78bfa;--tx:#f5f3ff;--mu:#a99fd0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;min-height:100vh;background:radial-gradient(circle at 20% 80%,#2a1a55 0,transparent 40%),radial-gradient(circle at 90% 70%,#3a1530 0,transparent 30%),var(--bg);color:var(--tx);font-family:Outfit,system-ui,sans-serif}
-button,input,textarea,select{font:inherit;color:inherit}
+body{margin:0;min-height:100vh;min-height:100dvh;overflow-x:hidden;background:radial-gradient(circle at 20% 80%,#2a1a55 0,transparent 40%),radial-gradient(circle at 90% 70%,#3a1530 0,transparent 30%),var(--bg);color:var(--tx);font-family:Outfit,system-ui,sans-serif}
+button,input,textarea,select{font:inherit;color:inherit}input,textarea,select{font-size:16px}
 .btn{background:linear-gradient(#8b5cf6,#7c4ded);border:0;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer;box-shadow:0 0 18px #8b5cf655}
 .btn.s{background:#4b3690;box-shadow:none;font-size:13px;padding:8px 14px}.btn:disabled{opacity:.5}
 .in{background:#2e2358;border:0;border-radius:10px;padding:14px;width:100%;outline:none}
@@ -17,6 +17,7 @@ h1{margin:6px 0 0;font-size:64px;line-height:.9;font-weight:800}h1 small{display
 .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .game{display:grid;grid-template-columns:minmax(220px,300px) 1fr minmax(240px,320px);gap:14px;padding:10px;max-width:1500px;margin:auto}
 @media(max-width:900px){.game{grid-template-columns:1fr}}
+@media(max-width:600px){.game{padding:8px;gap:10px}.stage{min-height:340px;padding:12px}.set{align-items:flex-start}.set select{max-width:52%;min-width:0}.tools{gap:5px}.tb{min-width:38px;min-height:38px}.sw{gap:10px}.home{min-height:88vh}h1{font-size:54px}h1 small{font-size:34px}}
 .logo{font-weight:800;font-size:20px}.logo b{color:var(--ac2)}
 .col{display:flex;flex-direction:column;gap:14px;min-width:0}
 .top{background:var(--p1);border-radius:14px;padding:16px;text-align:center;font-weight:700;color:var(--ac2)}
@@ -44,7 +45,7 @@ canvas{background:#fff;border-radius:10px;width:100%;max-width:640px;touch-actio
 .step{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%}.bub{background:var(--p1);border-radius:14px;padding:14px 18px;font-size:20px;max-width:640px;text-align:center}
 .done{color:#4ade80;font-size:12px}.wait{color:var(--mu);font-size:12px}
 </style></head><body><div id="app"></div>
-<script>
+<script src="/socket.io/socket.io.js"></script><script src="/client.js"></script><script type="application/x-legacy-client">
 const C=['#a3d93b','#fbbf24','#fb923c','#ef4444','#3b82f6','#22d3ee','#14b8a6','#4ade80','#a8785a','#ec4899','#fb7185','#8b5cf6'];
 const BN=['Pixel','Doodle','Sketchy','Blobby','Scribbles','Marker','Crayon','Inky','Squiggle','Pencil','Noodle'];
 const IDEAS=['a cat riding a skateboard','a sad potato at a party','the moon eating a pizza','a shark in a tuxedo','grandma fighting a robot','a dinosaur doing taxes','a ghost stuck in traffic','a very tired unicorn','pirates at the dentist','a snowman on vacation'];
