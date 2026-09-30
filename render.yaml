@@ -3,6 +3,6 @@ services:
     name: ccptic-phone
     runtime: node
     plan: free
-    buildCommand: npm install
+    buildCommand: npm ci
     startCommand: npm start
     healthCheckPath: /health
